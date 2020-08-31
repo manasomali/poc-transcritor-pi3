@@ -1,0 +1,103 @@
+<div id="divtrCtrl" ng-app="myApp" ng-controller="trCtrl" class="ng-scope" data-ng-init="getTranscricoesTr()">
+    <div ng-show="(usuario.logado) && (usuario.setor=='tr')">
+        <div class="row">
+            <div class="col-xs-4 coluna1">
+                <div class="box">
+                    <button id="recButton" class="notRec teste" onclick="botaoRecord()" ng-click="pegarHoraInicial();"></button></br>		
+                    
+                    <textarea class="hwt-content" id="textotranscrito" spellcheck="false" ng-model="textotranscrito" ng-change="analizaTextbox();" placeholder="ONS centro regional sul Matheus, desligar banco de capacitor de Lageado 2 para controle de tensão 18:35"></textarea>
+
+                    <button id="botao-limpar" ng-click="limpaTextbox();">Limpar</button>
+                    <button id="botao-limpar" ng-click="analizaTextbox();">Analizar</button>
+                    <table id="tabela-variaveis">
+                        <tr>
+                            <th class="center"><label for="assunto">Assunto: </label></th>
+                            <th><input class="input-registro" id="assunto"></th>
+                        </tr>
+                        <tr>
+                            <th class="center"><label for="eqp">Eqp: </label></th>
+                            <th><input class="input-registro" id="eqp"></th>
+                        </tr>
+                        <tr>
+                            <th class="center"><label for="local">Local: </label></th>
+                            <th><input class="input-registro" id="local"></th>
+                        </tr>
+                        <tr>
+                            <th class="center"><label for="horainformada">Hora Informada: </label></th>
+                            <th><input class="input-registro" id="horainformada"></th>
+                        </tr>
+                        <tr>
+                            <th class="center"><label for="agente">Agente: </label></th>
+                            <th><input class="input-registro" id="agente"></th>
+                        </tr>
+                        <tr>
+                            <th class="center"><label for="cortecarga">Corte Carga: </label></th>
+                            <th><input class="input-registro" id="cortecarga"></th>
+                        </tr>
+                        <tr>
+                            <th class="center"><label for="sgi">SGI: </label></th>
+                            <th><input class="input-registro" id="sgi"></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-xs-2 coluna2">
+                <div class="box center-xs">
+                    <div id="botoes-edicao">
+                        <div class="titulo">Menu de Edição</div>
+                        <input id="nome-assunto" placeholder="Assunto"></input></br>
+                        <button id="botao-adicionar" ng-click="criaBotao()">Adicionar</button>
+                        <button id="botao-remover" ng-click="removeBotao()">Remover</button>
+                    </div>
+                    <div id="botoes-assuntos">
+                        <div class="titulo">Assuntos</div>
+                        <ul class="inputs-assuntos">
+                            <li ng-repeat="name in names">
+                                <input type="radio"
+                                        class="input-assunto"    
+                                        ng-model="my.favorite"
+                                        ng-change="analizaTextbox();"
+                                        ng-value="name"
+                                        id="{{name}}"
+                                        name="favorite">
+                                <label class="assunto" for="{{name}}">{{name}}</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="botoes-registro"></br>
+                        <button id="botao-registrar" ng-click="postTranscricoesTr();"><ion-icon class="icoregistro" name="send"></ion-icon> REGISTRAR</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 end-xs coluna3">
+                <ion-icon class="atualizar" size="large" name="sync-outline" ng-click="getTranscricoesTr()"></ion-icon>
+                <ion-icon class="atualizar" size="large" name="cloud-download-outline" ng-click="exportCSV1()"></ion-icon>
+                <div class="box">
+                    <div id="handtr"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-hide="usuario.logado">
+        <div class="row center-xs">
+            <div class="col-xs-5 mensagem-login">
+                <h3>Efetue <a href="#modal-entre" rel="modal:open">Login!</a></h3>
+                <p>
+                    Para utilizar essa ferramenta é necessário efetuar <a href="#modal-entre" rel="modal:open">Login</a>.
+                    <br>
+                    Caso ainda não possua, cadastre-se <a href="#modal-registro" rel="modal:open">Aqui</a>.
+                </p>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+<div ng-app="myApp" ng-controller="painelCtrl" ng-init="iniciaVariaveis();" class="ng-scope">
+    <div class="row middle-xs center-xs">
+        <div id="topo" class="col-xs-11">
+            {{minutocorrente}}
+        </div>
+    </div>
+    <div class="row around-xs center-xs">
+        <div class="col-xs-2">
+            <div class="l1c1">
+                <div class="panel-heading">
+                    <ion-icon name="options-outline"></ion-icon>  Ajustes
+                </div>
+                <div class="panel-body">
+                    <table class="center">
+                        <tr>
+                          <td class="titulo">CSVPA</td>
+                          <td class="titulo">CMRO2</td>
+                          <td class="titulo">CQ138</td>
+                          <td class="titulo">CQ69</td>
+                          <td class="titulo">CLIV2</td>
+                        </tr>
+                        <tr>
+                            <td class="valorsliders">{{sliderCSVPA}}</td>
+                            <td class="valorsliders">{{sliderCMRO2}}</td>
+                            <td class="valorsliders">{{sliderCQ138}}</td>
+                            <td class="valorsliders">{{sliderCQ69}}</td>
+                            <td class="valorsliders">{{sliderCLIV2}}</td>
+                          </tr>
+                        <tr>
+                            <td class="tdsliders">
+                                <div class="sliders" id="sliderCSVPA" ng-click="valorsliderCSVPA()" style="width:8px;height:350px;margin:0;"></div>
+                            </td>
+                            <td class="tdsliders">
+                                <div class="sliders" id="sliderCMRO2" ng-click="valorsliderCMRO2()" style="width:8px;height:350px;margin:0;"></div>
+                            </td>
+                            <td class="tdsliders">
+                                <div class="sliders" id="sliderCQ138" ng-click="valorsliderCQ138()" style="width:8px;height:350px;margin:0;"></div>
+                            </td>
+                            <td class="tdsliders">
+                                <div class="sliders" id="sliderCQ69" ng-click="valorsliderCQ69()" style="width:8px;height:350px;margin:0;"></div>
+                            </td>
+                            <td class="tdsliders">
+                                <div class="sliders" id="sliderCLIV2" ng-click="valorsliderCLIV2()" style="width:8px;height:350px;margin:0;"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="l1c2">
+                <div id="mynetwork"></div>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="l1c3">
+                <div class="panel-heading">
+                    <ion-icon name="analytics-outline"></ion-icon>  Gráficos
+                </div>
+                <div class="panel-body">
+                    <div style="height: 250px">
+                        <canvas id="myChartGeracao"></canvas>
+                    </div>  
+                    <div style="height: 250px">
+                        <canvas id="myChartFluxo"></canvas>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row around-xs center-xs">
+        <div class="col-xs-2">
+            <div class="l2c1">
+                <div class="panel-body">
+                    <button ng-click="corteManual();">Ajustar Geração</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="l2c2">
+                <div class="panel-heading">
+                    <ion-icon name="terminal-outline"></ion-icon>  Log de Eventos
+                </div>
+                <div class="panel-body">
+                    <table>
+                        <tr>
+                          <td class="negrito">Evento</td>
+                          <td class="negrito">Descrição</td>
+                          <td class="negrito">Hora</td>
+                        </tr>
+                        <tr>
+                          <td id="estado_eqp" class="red">{{estado_eqp}}</td>
+                          <td id="descricao_eqp" class="red">{{descricao_eqp}}</td>
+                          <td id="minuto_eqp" class="red">{{minuto_eqp}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="l2c3">
+                <div class="panel-body">
+                    teste
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

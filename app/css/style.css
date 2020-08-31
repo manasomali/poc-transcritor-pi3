@@ -1,0 +1,471 @@
+body { 
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #5F5F5F;
+  height: 60px;
+  margin-top: -10px;
+}
+
+.header a.menu {
+  float: left;
+  background-color: #5F5F5F;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.header a.cusuario {
+  float: right;
+  background-color: #5F5F5F;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.header a.cusuario-logo {
+  float: right;
+  background-color: #5F5F5F;
+  border: none;
+  color: white;
+  padding: 10px 0px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+.header a.mostranome {
+  float: right;
+  background-color: #5F5F5F;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.header a.cusuario-logo:hover {
+  background-color: #5F5F5F;
+}
+.header a.mostranome:hover {
+  background-color: #5F5F5F;
+}
+.header a:hover {
+  background-color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+.header a.mostranome {
+  float: right;
+  background-color: #5F5F5F;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.center {
+  text-align: center;
+}
+/*
+.coluna1 {
+  background-color: rosybrown;
+}
+.coluna2 {
+  background-color: aqua;
+}
+.coluna3 {
+  background-color: turquoise;
+}
+*/
+
+.Rec{
+	animation-name: pulse;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.coluna1 .notRec{
+  background-color: white;
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-left: 35px solid black;
+  border-bottom: 17px solid transparent;
+  border-radius: 0;
+}
+.coluna1 button {
+	width: 35px;
+	height: 35px;
+	font-size: 0;
+	background-color: red;
+  border: 0;
+  border-color: red;
+	border-radius: 35px;
+	margin: 18px;
+  outline: none;
+  margin-left: 10%;
+}
+.coluna1 table {
+  text-align: left;
+  width: 90%;
+  font-weight: bolder;
+  margin-left: 10%;
+}
+@keyframes pulse{
+	0%{
+		box-shadow: 0px 0px 5px 0px rgba(173,0,0,.3);
+	}
+	65%{
+		box-shadow: 0px 0px 5px 13px rgba(173,0,0,.3);
+	}
+	90%{
+		box-shadow: 0px 0px 5px 13px rgba(173,0,0,0);
+	}
+}
+#modal-entre {
+  width: 300px;
+}
+form label {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: 10px;
+  font-weight: bold;
+}
+form .txtimput {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.button-modal {
+  margin-top: 10px;
+  margin-bottom: auto;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  background: black;
+  padding: 10px 15px;
+  border:none;
+}
+#modal-registro {
+  width: 600px;
+}
+form .esqueceusenha {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 9pt;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+form .perfis {
+  margin-left: -5px;
+  font-size: 10pt;
+}
+form select {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+form .classsetor {
+  margin-top: -8px;
+}
+#botao-limpar {
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  background: black;
+  padding: 10px 15px;
+  width: auto;
+}
+#botoes-edicao #botao-adicionar, #botoes-edicao #botao-remover {
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  background: black;
+  padding: 5px 5px;
+  width: auto;
+  border: none;
+  font-weight: bolder;
+  margin-top: 5px;
+}
+#botoes-assuntos .botao-assunto {
+  margin: 5px;
+  border-radius: 100px;
+  color: white;
+  font-size: 13px;
+  background: black;
+  padding: 10px 15px;
+  width: auto;
+  border: none;
+}
+#nome-assunto {
+  width: 50%;
+  border-radius: 4px;
+  outline:none;
+}
+#botoes-edicao {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+div .titulo {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+#botoes-registro {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#botao-registrar {
+  margin: 5px;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+  background: black;
+  padding: 15px 20px;
+  width: auto;
+  border: none;
+}
+#botao-atualizar {
+  margin-top: 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+  background: black;
+  padding: 15px 20px;
+  width: auto;
+  border: none;
+}
+#botao-excluir {
+  margin-top: 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+  background: black;
+  padding: 15px 20px;
+  width: auto;
+  border: none;
+}
+.modal {
+  word-wrap: break-word;
+}
+#botao-confirmacao-modal {
+  margin-top: 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+  background: black;
+  padding: 15px 20px;
+  width: auto;
+  border: none;
+  text-decoration: none;
+}
+
+#handpos .handsontable thead th{
+  background-color: black;
+  color:white;
+  font-weight:bold;
+  font-size:12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  vertical-align: middle;
+  width:100%;
+}
+#handtr .handsontable thead th{
+  background-color: black;
+  color:white;
+  font-weight:bold;
+  font-size:11px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  vertical-align: middle;
+  width:100%;
+}
+#handtr .handsontable td{
+  font-size:11px;
+  color: black;
+
+}
+.handsontable thead th.ht__active_highlight, .ht__highlight {
+  background-color: black !important;
+  color: white !important;;
+}
+#handtr .handsontable .htDimmed {
+  color: black;
+}
+.txtimput {
+  outline:none;
+}
+
+
+.inputs-assuntos {
+  list-style-type:none;
+  padding:0;
+  outline:none;
+}
+
+.inputs-assuntos li {
+  float:center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  position:relative;
+  font-weight:bold;
+  outline:none;
+}
+
+.inputs-assuntos input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline:none;
+}
+
+.inputs-assuntos input[type="radio"]:checked + label {
+  background:white;
+  color: black;
+  font-weight:bold;
+  outline:none;
+}
+
+.inputs-assuntos label {
+  padding:5px;
+  border:1px solid black; 
+  border-radius: 20px;
+  cursor:pointer;
+  z-index:90;
+  background:black;
+  color: white;
+  font-weight:bold;
+  outline:none;
+}
+
+.inputs-assuntos label:hover {
+   background:white;
+   color: black;
+   font-weight:bold;
+   outline:none;
+}
+ion-icon .atualizar {
+  color: black;
+  font-size: 64px;  
+  float: right;
+  margin: 5px;
+  position: relative;
+}
+ion-icon .icoregistro {
+  color: white;
+  font-size: 32px;
+}
+.text-justify {
+  text-align: justify;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+a.ferramentas {
+  cursor: pointer;
+  color: black;
+  font-weight: bolder;
+  text-decoration: none;
+}
+label.ferramentas {
+  display:block;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+div.mensagem-login {
+  background-color: #5F5F5F;
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: white;
+}
+div.mensagem-login a {
+  color: white;
+  font-weight: bold;
+}
+
+#assunto {
+  font-family: 'courier',sans-serif;
+  font-weight: bolder;
+  background-color: #ff8282cc;
+}
+#eqp {
+  font-family: 'courier',sans-serif;
+  font-weight: bolder;
+  background-color: #7dcbffcc;
+}
+#local {
+  font-family: 'courier',sans-serif;
+  font-weight: bolder;
+  background-color: #b6ff99cc;
+}
+#horainformada {
+  font-family: 'courier',sans-serif;
+  font-weight: bolder;
+  background-color: #98f3ffcc;
+}
+#agente {
+  font-family: 'courier',sans-serif;
+  font-weight: bolder;
+  background-color: #eda3ffcc;
+}
+#cortecarga {
+  font-family: 'courier',sans-serif;
+  font-weight: bolder;
+  background-color: #ffc64bcc;
+}
+#sgi {
+  font-family: 'courier',sans-serif;
+  font-weight: bolder;
+  background-color: #ffec99cc;
+}
+.input-registro {
+  width: 100%;
+  border-radius: 4px;
+  outline:none;
+}

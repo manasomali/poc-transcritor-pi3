@@ -1,0 +1,165 @@
+<html ng-app="myApp" ng-controller="indexCtrl" lang="pt-br" ng-init="usuario.logado=false">
+<head>
+    <!-- icone -->
+    <link rel="shortcut icon" href="/app/imgs/mic.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- css's -->
+    <link rel="stylesheet" type="text/css" href="app/css/style.css">
+    <!-- angularjs -->
+    <script src="app/lib/angular-1.6.9/angular.js"></script>
+    <script src="app/lib/angular-1.6.9/angular-route.js"></script>
+    <script src="app/lib/angular-1.6.9/ngStorage.js"></script>
+    <!-- flexboxgrid -->
+    <link rel="stylesheet" href="app/lib/flexboxgrid/flexboxgrid.css" type="text/css">
+    <!-- jquery -->
+	<script src="app/lib/jquery/jquery-3.4.1.js"></script>
+	<!-- highlight -->
+	<script src="app/lib/jquery/highlight.js"></script>
+	<link href="app/lib/jquery/highlight.css" rel="stylesheet">
+	<!-- jquery-ui -->
+    <link rel="stylesheet" href="app/lib/jquery-ui/jquery-ui.min.css">
+    <script src="app/lib/jquery-ui/jquery-ui.min.js"></script>
+    <!-- jquery modal -->
+	<link rel="stylesheet" href="app/lib/jquery/jquery.modal.min.css">
+    <script src="app/lib/jquery/jquery.modal.min.js"></script>
+    <!-- js's -->
+    <script src="app/controller/app.js"></script>
+    <script src="app/controller/posCtrl.js"></script>
+	<script src="app/controller/trCtrl.js"></script>
+	<script src="app/controller/indexCtrl.js"></script>
+	<script src="app/controller/entradaCtrl.js"></script>
+	<!-- p5speech -->
+	<script src="app/lib/p5/p5.js"></script>
+	<script src="app/lib/p5/p5.speech.js"></script>
+	<script src="app/controller/sketch.js"></script>
+	<!-- icons -->
+	<script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+	<!-- handsontable -->
+	<link rel="stylesheet" type="text/css" href="app/lib/handsontable-master/dist/handsontable.full.css">
+	<script src="app/lib/handsontable-master/dist/handsontable.full.js"></script>
+	
+	<title>Sistema de Registro de Transcrição de Voz para Operação</title>
+	<base href="/">
+</head>
+<body>
+    <div class="row between-xs middle-xs header">
+		<div class="col-xs-3">
+			<div class="box" ng-show="usuario.logado">
+				<a class="menu" href="/">INÍCIO</a>
+				<a class="menu" href="/tr" ng-show="usuario.setor=='tr'">TR</a>
+				<a class="menu" href="/pos" ng-show="usuario.setor=='pos'">POS</a>
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<div class="box cusuario" ng-show="usuario.logado">
+				<a class="cusuario" ng-click="logout()">Sair</a>
+				<a class="mostranome">
+					<label>{{usuario.nome}} {{usuario.sobrenome}}</label>
+				</a>
+				<a class="cusuario-logo"><ion-icon style="font-size: 18;" class="cusuario" name="person-circle-outline"></ion-icon></a>
+			</div>
+			<div class="box" ng-hide="usuario.logado">
+				<a class="cusuario" href="#modal-entre" rel="modal:open">Entre</a>
+				<a class="cusuario" href="#modal-registro" rel="modal:open">Registre</a>
+			</div>
+		</div>
+    </div>
+    <div class="row view">
+        <div class="col-xs-12">
+			<h1 class="text-center">Sistema de Registro de Transcrição de Voz para Operação</h1>
+            <div ng-view></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<div id="modal-entre" class="modal">
+	<div class="row">
+		<div class="col-xs-12">
+			<form ng-submit="logar()">
+				<label for="email">Usuário ou Email</label>
+				<input ng-model="login.usuario" class="txtimput" type="text" id="username" name="username" title="Informe seu usuário" required="">
+				<label for="password">Senha</label>
+				<input ng-model="login.senha" class="txtimput" type="password" id="password" name="password" title="Informe sua senha" required="">
+				<div class="row middle-xs">
+					<button href="#" rel="modal:close" class="button-modal">Entrar</button>
+				</div>
+				<div class="esqueceusenha">
+					<a>Esqueceu a senha?</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div id="modal-registro" class="modal">
+	<div class="row">
+		<div class="col-xs-12">
+			<form ng-submit="registrar()">
+				<div class="row">
+					<div class="col-xs-6">
+						<label for="username">Usuário</label>
+						<input ng-model="registro.usuario" class="txtimput" name="username" type="text" placeholder="JoaoSilva" required="">
+					</div>
+					<div class="col-xs-6">
+						<label for="email">E-mail</label>  
+						<input ng-model="registro.email" class="txtimput" name="email" type="email" placeholder="joao.silva@mail.com" required="">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<label for="nome">Nome</label>  
+						<input ng-model="registro.nome" class="txtimput" name="nome" type="text" placeholder="João" required="">
+					</div>
+					<div class="col-xs-6">
+						<label for="sobrenome">Sobrenome</label>  
+						<input ng-model="registro.sobrenome" class="txtimput" name="sobrenome" type="text" placeholder="Silva" required="">
+					</div>
+				</div> 
+				<div class="row">
+					<div class="col-xs-6">
+						<label for="instituicao">Instituição</label>  
+						<input ng-model="registro.instituicao" class="txtimput" name="instituicao" type="text" placeholder="IFSC" required="">
+					</div>
+					<div class="col-xs-6">
+						<label for="cargo">Cargo</label>  
+						<input ng-model="registro.cargo" class="txtimput" name="cargo" type="text" placeholder="Estágiario" required="">
+					</div>
+				</div> 					
+				<div class="row">
+					<div class="col-xs-6">
+						<label for="senha1">Senha</label>
+						<input ng-model="registro.senha1" class="txtimput" name="senha1" type="password" placeholder="Digite sua senha" required="">
+					</div>
+					<div class="col-xs-6">
+						<label for="senha2">Confirme a Senha </label>
+						<input ng-model="registro.senha2" class="txtimput" name="senha2" type="password" placeholder="Repite sua senha" required="">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<label for="setor">Setor</label></br>
+						<div class="classsetor">
+							<input type="radio" class="perfisinput" id="perfiloperador" name="perfil" value="tr" ng-model="registro.setor" required>
+							<label class="perfis" for="perfiloperador">Operador</label></br>
+							<input type="radio" class="perfisinput" id="perfilposoperacao" name="perfil" value="pos" ng-model="registro.setor">
+							<label class="perfis" for="perfilposoperacao">Pós Operação</label>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<label for="regiao">Região</label>
+						<select ng-model="registro.regiao" id="regiao">
+							<option value="S">Sul</option>
+							<option value="SE/CO">Sudeste/Centro-Oeste</option>
+							<option value="NE">Nordeste</option>
+							<option value="N">Norte</option>
+						</select>
+					</div>
+				</div>
+				<div class="row middle-xs">
+					<button href="#" rel="modal:close" class="button-modal">Registrar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,57 @@
+<div ng-app="myApp" ng-controller="posCtrl" class="ng-scope" data-ng-init="getTranscricoesPos()">
+    <div ng-show="(usuario.logado) && (usuario.setor=='pos')">     
+        <div class="row end-xs">
+            <div class="col-xs-12">
+                <ion-icon class="atualizar"size="large" name="sync-outline" ng-click="getTranscricoesPos()"></ion-icon>
+                <ion-icon class="atualizar"size="large" name="cloud-download-outline" ng-click="exportCSV2()"></ion-icon>
+                <div id="handpos"></div>
+            </div>
+        </div>
+        <div class="row center-xs"> 
+            <div class="col-xs-12">
+                <button id="botao-atualizar" ng-click="getTranscricoesParaAtualizacao()"><ion-icon class="icoregistro" name="cloud-upload-outline"></ion-icon> ATUALIZAR</button>
+                <button ng-click="getTranscricoesParaExclusao();" id="botao-excluir" ><ion-icon class="icoregistro" name="trash-outline"></ion-icon> EXCLUIR</button>
+            </div>
+        </div>
+    </div>
+    <div ng-hide="usuario.logado">
+        <div class="row center-xs">
+            <div class="col-xs-5 mensagem-login">
+                <h3>Efetue <a href="#modal-entre" rel="modal:open">Login!</a></h3>
+                <p>
+                    Para utilizar essa ferramenta é necessário efetuar <a href="#modal-entre" rel="modal:open">Login</a>.
+                    <br>
+                    Caso ainda não possua, cadastre-se <a href="#modal-registro" rel="modal:open">Aqui</a>.
+                </p>
+            </div>
+        </div>
+    </div>   
+    <div id="modal-confirmacao-exclusao" class="modal">
+        <div class="row center-xs">
+            <div class="col-xs-12">
+                <p>
+                    Tem certeza que deseja excluir os registros?
+                    </br></br>
+                    {{idparaexcluir}}
+                    </br></br></br>
+                    <a id="botao-confirmacao-modal" href="#!pos" rel="modal:close"><ion-icon class="icoregistro" name="close-outline"></ion-icon> Não</a>
+                    <a id="botao-confirmacao-modal" href="#!pos" rel="modal:close" ng-click="postExcluirTranscricoesPos()"><ion-icon class="icoregistro" name="checkmark-outline"></ion-icon> Sim</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="modal-confirmacao-atualizacao" class="modal">
+        <div class="row center-xs">
+            <div class="col-xs-12">
+                <p>
+                    Tem certeza que deseja atualizar os registros?
+                    </br></br>
+                    {{idparaatualizar}}
+                    </br></br></br>
+                    <a id="botao-confirmacao-modal" href="#!pos" rel="modal:close"><ion-icon class="icoregistro" name="close-outline"></ion-icon> Não</a>
+                    <a id="botao-confirmacao-modal" href="#!pos" rel="modal:close" ng-click="postTranscricoesPos()"><ion-icon class="icoregistro" name="checkmark-outline"></ion-icon> Sim</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
