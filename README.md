@@ -15,7 +15,7 @@ git clone https://github.com/manasomali/poc-transcritor-pi3.git
 
 Então configurar um web server (mais simples [web-server-for-chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)).
 
-Finalmente, configurar o banco de dados SQL e ajustar a coneção por meio do arquivo [conect.php](https://github.com/manasomali/poc-transcritor-pi3/blob/master/app/php/conect.php).
+Finalmente, configurar o banco de dados SQL e ajustar a conexão por meio do arquivo [conect.php](https://github.com/manasomali/poc-transcritor-pi3/blob/master/app/php/conect.php).
 
 O banco de dados deve possir as tabelas com os seguintes campos:
 - tb_usuarios
